@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Automation Playbook | 150+ Battle-Tested Prompts for n8n, Make.com & Zapier</title>
+    <meta name="description" content="Stop building AI workflows from scratch. Get 150+ production-ready prompts for n8n, Make.com, and Zapier. Save 100+ hours and $5,000+ in consultant fees.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --bg-tertiary: #1a1a1a;
+            --gold: #f59e0b;
+            --gold-light: #fbbf24;
+            --gold-dark: #d97706;
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            --text-muted: #737373;
+            --border: #262626;
+            --success: #10b981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--gold);
+            color: var(--bg-primary);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 8rem;
+            background: 
+                radial-gradient(ellipse at top, rgba(245, 158, 11, 0.1), transparent 60%),
+                radial-gradient(ellipse at bottom, rgba(245, 158, 11, 0.05), transparent 60%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* Pain Points */
+        #pain-points {
+            background: var(--bg-secondary);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pain-card {
+            padding: 2rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .pain-card:hover {
+            border-color: var(--gold);
+        }
+
+        .pain-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .pain-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .pain-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* What You Get */
+        #features {
+            background: var(--bg-primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Pricing */
+        #pricing {
+            background: var(--bg-secondary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            padding: 2.5rem;
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--gold);
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.2);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--bg-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-tier {
+            font-size: 1rem;
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: flex-start;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: 700;
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.125rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Testimonials */
+        #testimonials {
+            background: var(--bg-primary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            padding: 2.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ */
+        #faq {
+            background: var(--bg-secondary);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--gold);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        #final-cta {
+            background: 
+                radial-gradient(ellipse at center, rgba(245, 158, 11, 0.15), transparent 70%),
+                var(--bg-primary);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-secondary);
+            border: 2px solid var(--gold);
+            border-radius: 50px;
+            margin: 2rem 0;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .pricing-price {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            nav .cta-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid,
+            .pricing-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">AI Automation Playbook</div>
+            <a href="#pricing" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content fade-in-up">
+            <h1>Stop Wasting <span class="gradient-text">$3,000+</span> Building Workflows From Scratch</h1>
+            <p class="hero-subtitle">Get 150+ battle-tested AI automation prompts for n8n, Make.com, and Zapier. Build in 30 minutes what used to take 8 hours.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="150">0</span>
+                    <span class="stat-label">Production-Ready Prompts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">0</span>
+                    <span class="stat-label">Workflow Templates</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="8">0</span>
+                    <span class="stat-label">Categories Covered</span>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#pricing" class="cta-button">Get Instant Access — From $49</a>
+                <a href="#features" class="cta-button secondary">See What's Inside</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section id="pain-points">
+        <h2>You're Not Slow. You're Just <span class="gradient-text">Reinventing the Wheel</span></h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <span class="pain-icon">⏱️</span>
+                <h3 class="pain-title">40+ Hours Per Month Wasted</h3>
+                <p class="pain-description">Every workflow built from zero costs 6-8 hours of trial and error. That's $300-800 in your time or consultant fees.</p>
+            </div>
+            <div class="pain-card">
+                <span class="pain-icon">💸</span>
+                <h3 class="pain-title">$5,000+ Burned on Experiments</h3>
+                <p class="pain-description">Multiply those hours by 10 workflows and you've spent thousands reinventing solutions that already exist.</p>
+            </div>
+            <div class="pain-card">
+                <span class="pain-icon">🤔</span>
+                <h3 class="pain-title">No Guessing, Just Results</h3>
+                <p class="pain-description">Stop asking "maybe this will work." Get prompts tested with 50+ real implementations. Copy, customize, deploy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section id="features">
+        <h2>What's Inside <span class="gradient-text">The Playbook</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3 class="feature-title">150+ Production-Ready Prompts</h3>
+                <p class="feature-description">Copy-paste into n8n, Make.com, or Zapier. Each tested with 50+ real implementations across 8 categories.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">10-20 Complete Workflow Templates</h3>
+                <p class="feature-description">End-to-end automations for lead qualification, customer onboarding, data enrichment, invoice processing, and more.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3 class="feature-title">Platform-Specific Optimization</h3>
+                <p class="feature-description">How to adapt prompts for n8n vs Make.com vs Zapier—API differences, token limits, error handling included.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3 class="feature-title">The Prompt Engineering Framework</h3>
+                <p class="feature-description">The exact 5-step system to turn vague requirements into reliable automations that handle edge cases.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏢</div>
+                <h3 class="feature-title">50+ Real-World Use Cases</h3>
+                <p class="feature-description">Organized by industry: SaaS, e-commerce, agencies, consulting, real estate, finance. Find your scenario fast.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 class="feature-title">Token Optimization Cheat Sheet</h3>
+                <p class="feature-description">Cut your OpenAI/Anthropic costs by 40-60% without sacrificing accuracy. Your API bill will thank you.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3 class="feature-title">Lifetime Updates</h3>
+                <p class="feature-description">New prompts added monthly as platforms evolve. Your one-time purchase stays current forever.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3 class="feature-title">Private Community Access</h3>
+                <p class="feature-description">Pro & VIP: Join 200+ automation builders in our Discord. Get answers in under 2 hours.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h3 class="feature-title">1-on-1 Workflow Review</h3>
+                <p class="feature-description">VIP only: 45 minutes with Muhammad Faizan Ashraf to audit your most critical automation. $500 value included.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing">
+        <h2>Choose Your <span class="gradient-text">Level</span></h2>
+        <div class="pricing-grid">
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="pricing-tier">🥉 Starter</div>
+                <h3 class="pricing-title">Perfect for Solo Builders</h3>
+                <div class="pricing-price">$49</div>
+                <p class="pricing-description">Testing the waters with your first automations</p>
+                <ul class="pricing-features">
+                    <li>All 150+ prompts</li>
+                    <li>10 workflow templates</li>
+                    <li>Platform optimization guides</li>
+                    <li>Lifetime updates</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="#" class="cta-button pricing-cta">Get Starter — $49</a>
+            </div>
+
+            <!-- Pro (Most Popular) -->
+            <div class="pricing-card popular">
+                <div class="popular-badge">⭐ Most Popular</div>
+                <div class="pricing-tier">🥈 Pro</div>
+                <h3 class="pricing-title">For Production Workflows</h3>
+                <div class="pricing-price">$99</div>
+                <p class="pricing-description">Teams shipping 10+ workflows per month</p>
+                <ul class="pricing-features">
+                    <li>Everything in Starter, plus:</li>
+                    <li>Private Discord community</li>
+                    <li>Advanced use case library (50+ scenarios)</li>
+                    <li>Priority email support (&lt;24h)</li>
+                    <li>Monthly live Q&A sessions</li>
+                    <li>Early access to new prompts</li>
+                </ul>
+                <a href="#" class="cta-button pricing-cta">Get Pro — $99</a>
+            </div>
+
+            <!-- VIP -->
+            <div class="pricing-card">
+                <div class="pricing-tier">🥇 VIP</div>
+                <h3 class="pricing-title">Scaling to 50+ Automations</h3>
+                <div class="pricing-price">$199</div>
+                <p class="pricing-description">For agencies and enterprise teams</p>
+                <ul class="pricing-features">
+                    <li>Everything in Pro, plus:</li>
+                    <li>45-min private workflow review ($500 value)</li>
+                    <li>Custom prompt engineering for your use case</li>
+                    <li>Direct Slack/WhatsApp access</li>
+                    <li>Quarterly strategy calls</li>
+                    <li>Featured in case studies (optional)</li>
+                </ul>
+                <a href="#" class="cta-button pricing-cta">Get VIP — $199</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <h2>What Automation Builders <span class="gradient-text">Are Saying</span></h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"We were paying a contractor $2,500/month to build workflows. This playbook replaced 80% of that work. ROI in week one."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JC</div>
+                    <div class="testimonial-info">
+                        <h4>James Chen</h4>
+                        <p>Founder @ ScaleUp Agency</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"I'm not technical. I was scared to touch n8n. These prompts gave me confidence—I shipped 3 working automations in my first weekend. Clients think I'm a wizard."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SO</div>
+                    <div class="testimonial-info">
+                        <h4>Sarah Okonkwo</h4>
+                        <p>Operations Consultant</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"The token optimization guide alone saved us $340/month in API costs. The prompts are just icing. Worth 10x the price."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AR</div>
+                    <div class="testimonial-info">
+                        <h4>Alex Rodriguez</h4>
+                        <p>CTO @ Inbox Zero (12K users)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do these prompts work with GPT-4, Claude, and other models?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes. Every prompt includes model-specific variations for GPT-4, GPT-3.5, Claude 3, and Claude 3.5. We show you which model performs best for each use case (and why).
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>I'm new to n8n/Make/Zapier. Will this work for me?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Absolutely. Each prompt includes step-by-step setup instructions. If you can drag-and-drop nodes in n8n or add steps in Zapier, you're ready. No coding required (though code-friendly folks can customize deeper).
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How are these different from ChatGPT prompts on Reddit?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Three ways: (1) Built for workflow tools, not chat interfaces—handles JSON, API responses, error states. (2) Battle-tested in production with real data, not theoretical. (3) Optimized for cost and speed—we've cut token usage by 50% vs generic prompts.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What if a prompt doesn't work for my specific use case?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Pro and VIP members get support. Post in Discord (Pro) or message directly (VIP). We'll adapt the prompt or build a custom variant within 48 hours. Starter members can email us and we respond within 72 hours.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer refunds?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes. Try it for 14 days. If you don't save at least 10 hours vs building from scratch, email us for a full refund. No questions asked.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="final-cta">
+        <div class="cta-content">
+            <h2>Ready to Stop <span class="gradient-text">Reinventing the Wheel?</span></h2>
+            <p class="hero-subtitle">Join 200+ automation builders who've saved 100+ hours and $5,000+ in consultant fees.</p>
+            <div class="guarantee-badge">🛡️ 14-Day Money-Back Guarantee</div>
+            <div class="hero-buttons">
+                <a href="#pricing" class="cta-button">Get Instant Access — From $49</a>
+            </div>
+            <p style="margin-top: 2rem; color: var(--text-secondary); font-size: 0.95rem;">
+                Instant download. Works on Mac, Windows, Linux. PDF + Notion template included.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">
+                Built by <strong>Muhammad Faizan Ashraf</strong>, CEO of Prob N Tech<br>
+                AI Operations Command Center as a Service • Trusted by teams managing 500+ production automations
+            </p>
+            <p class="footer-text" style="margin-top: 1.5rem; font-size: 0.875rem;">
+                Questions? Email: <a href="mailto:faizan@probntech.com" style="color: var(--gold);">faizan@probntech.com</a>
+            </p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Refund Policy</a>
+            </div>
+            <p class="footer-text" style="margin-top: 2rem; font-size: 0.875rem;">
+                © 2026 Prob N Tech. All rights reserved. Secured by Gumroad. No subscriptions, no hidden fees.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Animated Counters
+        const animateCounter = (element, target, duration = 2000) => {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + '+';
+                }
+            }, 16);
+        };
+
+        // Trigger counters when in view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateCounter(entry.target, target);
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-number').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                faqItems.forEach(i => i.classList.remove('active'));
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
